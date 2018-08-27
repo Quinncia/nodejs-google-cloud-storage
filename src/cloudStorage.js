@@ -487,7 +487,7 @@ module.exports = function(privateKey, googleServicesEmail, storageBucket) {
      * @param customFields {Object} dictionary for custom fields
      **/
     uploadRequest: function(filename, key, isAttachment, customFields) {
-      var mimeType = mime.lookup(filename),
+      var mimeType = mime.getType(filename),
         uploadPolicy = {
           expiration: moment()
             .add(1, "hour")
